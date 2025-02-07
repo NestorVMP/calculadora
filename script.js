@@ -2,6 +2,7 @@
 let numero1;
 let numero2;
 let operacion;
+let resultado;
 
 // Obtener referencias a los elementos
 const inputs = document.querySelectorAll('.input-field');
@@ -20,6 +21,29 @@ document.querySelector('.buttons-container').addEventListener('click', (e) => {
         console.log('Número 1:', numero1);
         console.log('Número 2:', numero2);
         console.log('Operación:', operacion);
+        switch (operacion) {
+            case "sumar":
+                resultado=numero1+numero2;
+                console.log('El resultado de '+numero1+' + '+numero2+' = '+resultado);
+                break;
+            case "restar":
+                resultado=numero1-numero2;
+                console.log('El resultado de '+numero1+' - '+numero2+' = '+resultado);
+                break;
+            case "multiplicar":
+                resultado=numero1*numero2;
+                console.log('El resultado de '+numero1+' * '+numero2+' = '+resultado);
+                break;
+        
+            default:
+                if (numero2==0) {
+                    console.log('No se puede dividir por cero');
+                } else {
+                    resultado=numero1/numero2;
+                    console.log('El resultado de '+numero1+' / '+numero2+' = '+resultado);
+                }
+                break;
+        }
     }
 });
 
